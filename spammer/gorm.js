@@ -6,11 +6,12 @@ var crypto = require('crypto');
 log = console.log;
 
 var cookie = '';
+var xcn = 'f11b1ff8dcea1e562d052c6705f6075';
 
 function start() {
    request.post('http://www.neopets.com/space/gormball2.phtml', {
       form: {
-         'xcn'            :'c45a23706949d5131306d76d6ffb3999',
+         'xcn'            : xcn,
          'player_backed'  :'1'
       },
       headers: {
@@ -34,9 +35,8 @@ function play(xcn, page_count, last_character) {
    request.post('http://www.neopets.com/space/gormball2.phtml', {
       form: {
          'type'           :'moveon',
-         'page_count'     :'107',
-         'xcn'            :'c45a23706949d5131306d76d6ffb3999',
-         'last_character' :'Zargrold'
+         'page_count'     :'4',
+         'xcn'            :xcn
       },
       headers: {
          'Cookie'  : 'neologin=' + cookie,
@@ -44,6 +44,7 @@ function play(xcn, page_count, last_character) {
       }
    }, function(err, res, body) {
       var $ = cheerio.load(body);
+      console.error(body);
 
       if (err || res.statusCode != 200) {
          console.log('HTTP GOT FUCKED');

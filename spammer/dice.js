@@ -12,7 +12,7 @@ function play() {
       form: {
          'type'    : 'start',
          'raah'    : 'init',
-         '_ref_ck' : 'c45a23706949d5131306d76d6ffb3999'
+         '_ref_ck' : '55be9bdbaaafc1ff362b72d773ee918e'
       },
       headers: {
          'Cookie'  : 'neologin=' + cookie,
@@ -25,7 +25,7 @@ function play() {
       } else if(body.match(/BORED/)) {
          console.log('The Muthafucka is BORED');
       } else {
-         setTimeout(play, Math.random()*200+80);
+         setTimeout(play, Math.random()*150+100);
       }
       var $ = cheerio.load(body);
       result = $('table[align="center"]');

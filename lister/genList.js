@@ -89,7 +89,7 @@ function genList(shopNumbers) {
                    el.find('font').text().trim().replace(/,/g,'').slice(0,-3)
                 );
 
-            if((isNaN(profit) || profit >= minProfit) && (profit/price >= 0.15)) {
+            if(isNaN(profit) || (profit >= minProfit && profit/price >= 0.15)) {
                buyList.push(name);
             } else {
                nextPage = false;

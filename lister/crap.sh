@@ -11,16 +11,20 @@
 # 58 - Stamps
 # 73 - Meridell pots
 
+# 37 - Snow Food 
+
 rm *.txt
 
-node genList 500 1 7 14
+node genList 1500 1 14 7 #14 37
 
-node genList 5000 2 73
+#node genList 10000 10
 
-node genList 10000 dunno igloo attic
-cat dunno.txt igloo.txt > Igloo.txt
-cat dunno.txt attic.txt > Attic.txt
-rm igloo.txt attic.txt dunno.txt
+node genList 5000 73
+
+#node genList 10000 dunno igloo attic
+#cat dunno.txt igloo.txt > Igloo.txt
+#cat dunno.txt attic.txt > Attic.txt
+#rm igloo.txt attic.txt dunno.txt
 unix2dos *.txt
 cp *.txt ~/NP
 
